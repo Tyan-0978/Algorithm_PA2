@@ -1,0 +1,9 @@
+# vim swap files
+*.swp
+
+# cpp .o and executable files
+bin/*
+*.o
+
+# output files
+outputs/*

@@ -1,0 +1,7 @@
+This is README file for Algorithm PA2.
+Author: B08901155田祐行
+
+How to compile and run:
+
+1. make
+2. ./bin/mps <input_file_name> <output_file_name>2. ./bin/mps <input_file_name> <output_file_name>
