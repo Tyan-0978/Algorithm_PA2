@@ -26,15 +26,16 @@ int main(int arg_num, char* args[]) {
   int i,j;
   while (input_file >> i >> j) {
     chords[i] = j;
+    chords[j] = i;
   }
 
   input_file.close();
   //cout << "input file is read" << endl;
 
   // find mps
-  tuple<int, set<vector<int>>> result;
+  tuple<int, set<int>> result;
   int result_num;
-  set<vector<int>> result_chords;
+  set<int> result_chords;
 
   MaximumPlanarSubset MPS;
   result = MPS.find_mps(n, chords);
@@ -46,10 +47,10 @@ int main(int arg_num, char* args[]) {
   // write output file
   ofstream output_file(args[2]);
   output_file << result_num << endl;
-  set<vector<int>>::iterator itr;
+  set<int>::iterator itr;
   for (itr = result_chords.begin(); itr != result_chords.end(); itr++) {
-    vector<int> c = *itr;
-    output_file << c[0] << " " << c[1] << endl;
+    int c = *itr;
+    output_file << c << " " << chords[c] << endl;
   }
   output_file.close();
 

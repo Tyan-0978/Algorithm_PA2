@@ -11,7 +11,10 @@ using namespace std;
 class MaximumPlanarSubset {
   public:
     MaximumPlanarSubset(); // constructor
-    tuple<int, set<vector<int>>> find_mps(int, vector<int>);
+    tuple<int, set<int>> find_mps(int, vector<int>);
+
+  private:
+    set<int> track_chords(int, int, vector<vector<int>>&, vector<int>&);
 };
 
 #endif
